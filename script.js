@@ -22,7 +22,7 @@ function rot13(encodedStr){
 			decodedArr[i] = String.fromCharCode(decodedArr[i].charCodeAt(0)-13);
 		}
 	}
-  return decodedArr;//return decodedArr
+  return decodedArr.toString().replaceAll(",","");//return decodedArr
 }
 
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
