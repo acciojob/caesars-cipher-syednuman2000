@@ -22,7 +22,15 @@ function rot13(encodedStr){
 			decodedArr[i] = String.fromCharCode(decodedArr[i].charCodeAt(0)-13);
 		}
 	}
-  return decodedArr.toString().replaceAll(",","");//return decodedArr
+  let commaString = decodedArr.toString();
+	let ans = "";
+	for(let i in commaString){
+		if(i%2==1){
+			continue
+		}
+		ans += commaString.charAt(i);
+	}
+	return ans;
 }
 
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
