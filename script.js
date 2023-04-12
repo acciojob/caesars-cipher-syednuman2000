@@ -15,7 +15,12 @@ function rot13(encodedStr){
   // Only change code below this line
 	decodedArr = encodedStr.split('');
 	for(let i in decodedArr){
-		decodedArr[i] = String(decodedArr[i]-13);
+		if(decodedArr[i]==" " || decodedArr[i]=="?" || decodedArr[i]==",") continue;
+		if((decodedArr[i].charCodeAt(0)>=65 && decodedArr[i].charCodeAt(0)<=77) || ((decodedArr[i].charCodeAt(0)>=97 && decodedArr[i].charCodeAt(0)<=109))){
+			decodedArr[i] = String.fromCharCode(decodedArr[i].charCodeAt(0)+13);
+		}else{
+			decodedArr[i] = String.fromCharCode(decodedArr[i].charCodeAt(0)-13);
+		}
 	}
   return decodedArr;//return decodedArr
 }
